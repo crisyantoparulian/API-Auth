@@ -30,6 +30,6 @@ use Illuminate\Http\Request;
 Route::post('login', 'AuthenticateController@login');
 Route::post('register', 'AuthenticateController@register');
 
-Route::group(['prefix'=>'v1', 'middleware'=>['jwt.auth']], function(){
+Route::group(['prefix'=>'v1', 'middleware'=>['jwt.auth','userApi']], function(){
 	Route::resource('user', 'UserController');
 });
